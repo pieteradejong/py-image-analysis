@@ -14,6 +14,8 @@ class ImageAnalysis:
 		    if file.endswith(".jpeg"):
 		        img = Image.open(file)
 
+		return img
+
 	# def: generator to yield each image
 
 	# def: (image data, function) -> analysis output
@@ -21,9 +23,27 @@ class ImageAnalysis:
 
 
 def main():
-    IA = ImageAnalysis()
-    # print(os.path.dirname(os.path.realpath(__file__)))
-    print(IA.fetch_image_file_names())
+    # IA = ImageAnalysis()
+    
+    # print(os.path.dirname(os.path.realpath(__file__)) + 'time_covers' + 'musk.jpeg')
+  	# img = Image.open(os.path.dirname(os.path.realpath(__file__)) + '/time_covers/' + 'musk.jpeg')
+  	img = Image.open(os.path.dirname(os.path.realpath(__file__)) + '/time_covers/' + 'musk.jpeg')
+  	for prop in dir(img):
+  		print(prop)
+
+  	print("\n")
+  	print(img.getcolors())
+  	print(img.getexif())
+  	print(img.size)
+  	print(img.quantization)
+  	print(img.getpalette())
+
+
+  	# print(img.palette)
+  	# print(img.histogram())
+
+
+    # print(IA.fetch_image_file_names())
 
 
 if __name__ == "__main__":
